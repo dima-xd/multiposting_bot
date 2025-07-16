@@ -514,13 +514,6 @@ class PicturesScene(CancellableScene, state="pictures"):
                     BUTTON_CANCEL
                 )
 
-                if number_of_medias >= 4 and networks != ["Telegram"]:
-                    await answer_message.edit_text(
-                        f"Can't add more medias. Maximum is 4",
-                        reply_markup=menu_builder.as_markup()
-                    )
-                    return
-
                 if message.document:
                     filename = message.document.file_name
                     ext = os.path.splitext(filename)[1] or ""
